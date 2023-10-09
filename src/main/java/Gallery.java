@@ -103,10 +103,12 @@ public class Gallery<T extends Comparable<T>> {
     /**
      * Sorts this collections
      */
-    public void sort() {
-        array = quicksort(this.array);
+    public void sort(SortType sortType) {
+        switch (sortType) {
+            case QUICKSORT -> array = quicksort(this.array);
+            default -> array = quicksort(this.array);
+        }
     }
-
 
     private void reduplication() {
         Object[] x2 = new Object[array.length * 2];
